@@ -1,4 +1,3 @@
-cat > server.js << 'EOF'
 const express = require('express');
 const app = express();
 const PORT = 3000;
@@ -186,4 +185,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log("Food to Go running on port " + PORT);
 });
-EOF
