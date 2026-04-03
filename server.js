@@ -1,3 +1,4 @@
+cat > server.js << 'EOF'
 const express = require('express');
 const app = express();
 const PORT = 3000;
@@ -15,6 +16,12 @@ app.get('/', (req, res) => {
         font-family: Arial, sans-serif;
         margin: 0;
         background: #f8f8f8;
+        transition: 0.3s;
+      }
+
+      body.dark {
+        background: #121212;
+        color: #fff;
       }
 
       .navbar {
@@ -24,10 +31,6 @@ app.get('/', (req, res) => {
         display: flex;
         justify-content: space-between;
         align-items: center;
-      }
-
-      .navbar h2 {
-        margin: 0;
       }
 
       .cart {
@@ -45,6 +48,7 @@ app.get('/', (req, res) => {
         padding: 8px 15px;
         border-radius: 8px;
         cursor: pointer;
+        margin-left: 10px;
       }
 
       .btn:hover {
@@ -58,22 +62,6 @@ app.get('/', (req, res) => {
 
       .hero h1 {
         font-size: 40px;
-        color: #333;
-      }
-
-      .hero p {
-        color: #777;
-      }
-
-      .search {
-        margin-top: 20px;
-      }
-
-      input {
-        padding: 10px;
-        width: 250px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
       }
 
       .food-container {
@@ -90,6 +78,10 @@ app.get('/', (req, res) => {
         text-align: center;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         transition: 0.3s;
+      }
+
+      body.dark .card {
+        background: #1e1e1e;
       }
 
       .card:hover {
@@ -122,44 +114,41 @@ app.get('/', (req, res) => {
       <h2>🍔 Food to Go</h2>
       <div>
         <span class="cart">Cart: <span id="cartCount">0</span></span>
-        <button class="btn" onclick="resetCart()" style="margin-left:10px;">Clear Cart</button>
+        <button class="btn" onclick="resetCart()">Clear</button>
+        <button class="btn" onclick="toggleDark()">🌙</button>
       </div>
     </div>
 
     <div class="hero">
       <h1>Order Food You Love</h1>
       <p>Fast delivery from top restaurants</p>
-
-      <div class="search">
-        <input type="text" placeholder="Search food...">
-      </div>
     </div>
 
     <div class="food-container">
 
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg" alt="Pizza">
+        <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg">
         <h3>Pizza</h3>
         <p>₹199</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
       </div>
 
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg" alt="Burger">
+        <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg">
         <h3>Burger</h3>
         <p>₹149</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
       </div>
 
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2020/05/02/18/51/biryani-5123850_1280.jpg" alt="Biryani">
+        <img src="https://cdn.pixabay.com/photo/2019/06/04/20/33/biryani-4253750_1280.jpg">
         <h3>Biryani</h3>
         <p>₹249</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
       </div>
 
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2017/08/30/07/52/donut-2691900_1280.jpg" alt="Dessert">
+        <img src="https://cdn.pixabay.com/photo/2016/11/29/13/02/dessert-1868181_1280.jpg">
         <h3>Dessert</h3>
         <p>₹99</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
@@ -183,6 +172,10 @@ app.get('/', (req, res) => {
         count = 0;
         document.getElementById("cartCount").innerText = count;
       }
+
+      function toggleDark() {
+        document.body.classList.toggle("dark");
+      }
     </script>
 
   </body>
@@ -193,3 +186,4 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log("Food to Go running on port " + PORT);
 });
+EOF
