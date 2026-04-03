@@ -126,28 +126,32 @@ app.get('/', (req, res) => {
     <div class="food-container">
 
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg">
+        <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg"
+             onerror="this.src='https://via.placeholder.com/300x150?text=Pizza'">
         <h3>Pizza</h3>
         <p>₹199</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
       </div>
 
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg">
+        <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg"
+             onerror="this.src='https://via.placeholder.com/300x150?text=Burger'">
         <h3>Burger</h3>
         <p>₹149</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
       </div>
 
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2019/06/04/20/33/biryani-4253750_1280.jpg">
+        <img src="https://cdn.pixabay.com/photo/2019/06/04/20/33/biryani-4253750_1280.jpg"
+             onerror="this.src='https://via.placeholder.com/300x150?text=Biryani'">
         <h3>Biryani</h3>
         <p>₹249</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
       </div>
 
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2016/11/29/13/02/dessert-1868181_1280.jpg">
+        <img src="https://cdn.pixabay.com/photo/2016/11/29/13/02/dessert-1868181_1280.jpg"
+             onerror="this.src='https://via.placeholder.com/300x150?text=Dessert'">
         <h3>Dessert</h3>
         <p>₹99</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
