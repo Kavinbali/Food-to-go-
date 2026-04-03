@@ -38,6 +38,19 @@ app.get('/', (req, res) => {
         font-weight: bold;
       }
 
+      .btn {
+        background: #e23744;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background: #c72c3a;
+      }
+
       .hero {
         text-align: center;
         padding: 50px 20px;
@@ -94,19 +107,6 @@ app.get('/', (req, res) => {
         color: #e23744;
       }
 
-      .btn {
-        background: #e23744;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 8px;
-        cursor: pointer;
-      }
-
-      .btn:hover {
-        background: #c72c3a;
-      }
-
       .footer {
         text-align: center;
         padding: 20px;
@@ -120,7 +120,10 @@ app.get('/', (req, res) => {
 
     <div class="navbar">
       <h2>🍔 Food to Go</h2>
-      <div class="cart">Cart: <span id="cartCount">0</span></div>
+      <div>
+        <span class="cart">Cart: <span id="cartCount">0</span></span>
+        <button class="btn" onclick="resetCart()" style="margin-left:10px;">Clear Cart</button>
+      </div>
     </div>
 
     <div class="hero">
@@ -135,28 +138,28 @@ app.get('/', (req, res) => {
     <div class="food-container">
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1601924582975-7e60c4f9c0f6" alt="Pizza">
+        <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg" alt="Pizza">
         <h3>Pizza</h3>
         <p>₹199</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Burger">
+        <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg" alt="Burger">
         <h3>Burger</h3>
         <p>₹149</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1604908176997-4312e6c49a83" alt="Biryani">
+        <img src="https://cdn.pixabay.com/photo/2020/05/02/18/51/biryani-5123850_1280.jpg" alt="Biryani">
         <h3>Biryani</h3>
         <p>₹249</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b" alt="Dessert">
+        <img src="https://cdn.pixabay.com/photo/2017/08/30/07/52/donut-2691900_1280.jpg" alt="Dessert">
         <h3>Dessert</h3>
         <p>₹99</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
@@ -175,6 +178,11 @@ app.get('/', (req, res) => {
         count++;
         document.getElementById("cartCount").innerText = count;
       }
+
+      function resetCart() {
+        count = 0;
+        document.getElementById("cartCount").innerText = count;
+      }
     </script>
 
   </body>
@@ -185,4 +193,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log("Food to Go running on port " + PORT);
 });
-
