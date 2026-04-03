@@ -59,10 +59,6 @@ app.get('/', (req, res) => {
         padding: 50px 20px;
       }
 
-      .hero h1 {
-        font-size: 40px;
-      }
-
       .food-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -126,32 +122,28 @@ app.get('/', (req, res) => {
     <div class="food-container">
 
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg"
-             onerror="this.src='https://via.placeholder.com/300x150?text=Pizza'">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1470&auto=format&fit=crop">
         <h3>Pizza</h3>
         <p>₹199</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
       </div>
 
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg"
-             onerror="this.src='https://via.placeholder.com/300x150?text=Burger'">
+        <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?q=80&w=1415&auto=format&fit=crop">
         <h3>Burger</h3>
         <p>₹149</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
       </div>
 
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2019/06/04/20/33/biryani-4253750_1280.jpg"
-             onerror="this.src='https://via.placeholder.com/300x150?text=Biryani'">
+        <img src="https://images.unsplash.com/photo-1719239885399-f87d992e0f18?w=600&auto=format&fit=crop&q=60">
         <h3>Biryani</h3>
         <p>₹249</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
       </div>
 
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2016/11/29/13/02/dessert-1868181_1280.jpg"
-             onerror="this.src='https://via.placeholder.com/300x150?text=Dessert'">
+        <img src="https://images.unsplash.com/photo-1711043484522-ad01c2bd769b?w=600&auto=format&fit=crop&q=60">
         <h3>Dessert</h3>
         <p>₹99</p>
         <button class="btn" onclick="addToCart()">Add to Cart</button>
