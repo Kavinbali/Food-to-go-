@@ -1,0 +1,13 @@
+{
+  "name": "food-to-go",
+  "version": "1.0.0",
+  "description": "Food to Go - Online Food Delivery App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo 'Build complete'"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
